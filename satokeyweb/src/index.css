@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  /* Satokey design tokens */
+  --color-deep-space: #020617;
+  --color-electric-cyan: #22d3ee;
+  --color-security-green: #10b981;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background: #050a14;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: var(--font-sans);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.65;
+  }
+
+  /* Section heading consistency */
+  .section-heading {
+    letter-spacing: -0.025em;
+  }
+
+  /* Shared typography helpers for sections */
+  .section-subtitle {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  @media (min-width: 640px) {
+    .section-subtitle {
+      font-size: 1rem;
+    }
+  }
+
+  .card-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  .card-body {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Solid dark blue – same as body, for nav and sections */
+  .bg-glassy-dark-blue {
+    background: #050a14;
+  }
+
+  /* Keyboard focus - visible outline only when tabbing */
+  :focus {
+    outline: none;
+  }
+  :focus-visible {
+    outline: 2px solid rgba(34, 211, 238, 0.6);
+    outline-offset: 2px;
+  }
+
+  /* Respect user motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
