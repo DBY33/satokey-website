@@ -1,4 +1,4 @@
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const VAULT_OPEN_DELAY_MS = 400;
@@ -264,6 +264,20 @@ const BOLT_RIM_SHADOW = "rgba(25, 35, 50, 0.8)";
 
 export function VaultVisual() {
   const { schedulePlay, cancelSchedule } = useVaultOpenSound();
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) schedulePlay();
+    else cancelSchedule();
+  }, [isOpen, schedulePlay, cancelSchedule]);
+
+  const handlePointerEnter = useCallback((e: React.PointerEvent) => {
+    if (e.pointerType !== "touch") setIsOpen(true);
+  }, []);
+  const handlePointerLeave = useCallback((e: React.PointerEvent) => {
+    if (e.pointerType !== "touch") setIsOpen(false);
+  }, []);
+  const handleTap = useCallback(() => setIsOpen((o) => !o), []);
 
   return (
     <motion.div
@@ -272,25 +286,26 @@ export function VaultVisual() {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
-      {/* Subtle halo behind vault - lights up dark blue on hover */}
+      {/* Subtle halo behind vault - lights up when vault is open */}
       <motion.div
         className="absolute -inset-4 rounded-2xl blur-[80px]"
         style={{ backgroundColor: "rgba(30, 58, 138, 0.08)" }}
-        whileHover={{
-          backgroundColor: "rgba(30, 58, 138, 0.35)",
-          transition: { duration: 0.4 },
+        animate={{
+          backgroundColor: isOpen ? "rgba(30, 58, 138, 0.35)" : "rgba(30, 58, 138, 0.08)",
         }}
+        transition={{ duration: 0.4 }}
         aria-hidden
       />
 
       <motion.div
-        className="group relative h-44 w-[11rem] md:h-52 md:w-[13rem]"
+        className="group relative h-44 w-[11rem] md:h-52 md:w-[13rem] cursor-pointer touch-manipulation"
         style={{ perspective: 600, transformStyle: "preserve-3d" }}
-        whileHover="hover"
+        animate={isOpen ? "hover" : "rest"}
         initial="rest"
         variants={{ rest: {}, hover: {} }}
-        onMouseEnter={schedulePlay}
-        onMouseLeave={cancelSchedule}
+        onPointerEnter={handlePointerEnter}
+        onPointerLeave={handlePointerLeave}
+        onClick={handleTap}
       >
         {/* Outer frame - thick steel plate */}
         <motion.div
@@ -359,9 +374,10 @@ export function VaultVisual() {
           aria-hidden
         />
 
-        {/* Interior - visible only when door opens (on hover) */}
+        {/* Interior - visible only when door opens (hover or tap) */}
         <div
-          className="absolute left-1/2 top-1/2 z-0 h-28 w-28 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:h-32 md:w-32"
+          className="absolute left-1/2 top-1/2 z-0 h-28 w-28 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full transition-opacity duration-300 md:h-32 md:w-32"
+          style={{ opacity: isOpen ? 1 : 0 }}
           style={{
             background: "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%)",
             boxShadow: "inset 0 2px 20px rgba(0,0,0,0.6)",

@@ -1,28 +1,28 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { LogoWithTransparentBg } from "./LogoWithTransparentBg";
+import { LogoIcon } from "./LogoIcon";
 
 const APP_STORE_URL = "https://apps.apple.com/app/satokey/id0000000000";
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.satokey.app";
 
 export function AppDownload() {
-  const [logoSrcFailed, setLogoSrcFailed] = useState(false);
-
   return (
     <section
       id="install-the-app"
       className="scroll-mt-20 border-t border-white/[0.08] bg-black px-4 py-28 sm:px-6 sm:py-32 lg:px-8"
       aria-labelledby="install-the-app-heading"
     >
-      <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-white/[0.1] bg-black px-8 py-20 sm:px-14 sm:py-24">
-        <div
-          className="pointer-events-none absolute -top-24 left-1/2 h-32 w-64 -translate-x-1/2 rounded-full bg-[#22d3ee]/[0.04] blur-[100px]"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute -bottom-12 right-0 h-24 w-48 rounded-full bg-[#10b981]/[0.03] blur-[80px]"
-          aria-hidden
-        />
+      <div className="relative mx-auto max-w-4xl rounded-2xl border border-white/[0.1] bg-black px-8 py-20 sm:px-14 sm:py-24">
+        {/* Blur orbs clipped to rounded card */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl" aria-hidden>
+          <div
+            className="absolute -top-24 left-1/2 h-32 w-64 -translate-x-1/2 rounded-full bg-[#22d3ee]/[0.04] blur-[100px]"
+            aria-hidden
+          />
+          <div
+            className="absolute -bottom-12 right-0 h-24 w-48 rounded-full bg-[#10b981]/[0.03] blur-[80px]"
+            aria-hidden
+          />
+        </div>
 
         <div className="relative flex flex-col items-center text-center">
           <motion.h2
@@ -47,7 +47,7 @@ export function AppDownload() {
           </motion.p>
 
           <motion.div
-            className="mt-12 flex flex-col items-center gap-5 sm:flex-row sm:justify-center sm:gap-6"
+            className="mt-12 flex flex-col items-center gap-5 pb-6 sm:flex-row sm:justify-center sm:gap-6 sm:pb-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
@@ -58,23 +58,16 @@ export function AppDownload() {
               },
             }}
           >
-            {/* App logo - black background removed at runtime for transparency */}
+            {/* S logo only – extra padding so bottom isn't clipped by card's rounded corners */}
             <motion.div
-              className="flex-shrink-0 translate-x-3 bg-transparent sm:translate-x-4"
+              className="flex min-h-0 flex-shrink-0 overflow-visible pb-4"
               variants={{
                 hidden: { opacity: 0, y: 12 },
                 visible: { opacity: 1, y: 0 },
               }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              {logoSrcFailed ? (
-                <span className="text-lg font-semibold text-white">Satokey</span>
-              ) : (
-                <LogoWithTransparentBg
-                  className="h-[13.5rem] w-[13.5rem] object-contain md:h-[14.9rem] md:w-[14.9rem] bg-transparent"
-                  onError={() => setLogoSrcFailed(true)}
-                />
-              )}
+              <LogoIcon size={180} />
             </motion.div>
 
             {/* Store badges - App Store (cyan) and Play Store (green) icons */}
