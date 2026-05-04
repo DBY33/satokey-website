@@ -6,11 +6,11 @@ export function ZapierWaitlist() {
   return (
     <section
       id="waitlist"
-      className="scroll-mt-20 border-t border-white/[0.12] bg-tech-section px-4 py-28 sm:px-6 sm:py-32 lg:px-8"
+      className="scroll-mt-20 border-t border-white/[0.12] bg-tech-section px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
       aria-labelledby="waitlist-heading"
     >
       <div className="mx-auto max-w-5xl">
-        <div className="relative overflow-hidden rounded-2xl border border-[#22d3ee]/25 bg-black px-6 py-14 shadow-[0_0_0_1px_rgba(34,211,238,0.14),0_30px_90px_-35px_rgba(34,211,238,0.35)] sm:px-12 sm:py-16">
+        <div className="relative overflow-hidden rounded-2xl border border-[#22d3ee]/25 bg-black px-6 py-10 shadow-[0_0_0_1px_rgba(34,211,238,0.14),0_30px_90px_-35px_rgba(34,211,238,0.35)] sm:px-12 sm:py-12">
           <div
             className="pointer-events-none absolute inset-0"
             style={{
@@ -48,34 +48,17 @@ export function ZapierWaitlist() {
               </p>
             </motion.div>
 
-            <div className="mx-auto mt-10 max-w-3xl">
-              <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+            <div className="mx-auto mt-8 max-w-3xl">
+              <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <a
                   href={ZAPIER_WAITLIST_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#22d3ee] to-[#60a5fa] px-8 py-4 text-base font-semibold text-[#020617] shadow-[0_16px_40px_-18px_rgba(34,211,238,0.7),0_0_0_1px_rgba(34,211,238,0.25)] transition-[transform,filter,box-shadow] hover:scale-[1.01] hover:brightness-110 hover:shadow-[0_18px_50px_-18px_rgba(34,211,238,0.95),0_0_0_1px_rgba(34,211,238,0.35)] active:scale-[0.99] active:brightness-125 active:shadow-[0_20px_60px_-18px_rgba(34,211,238,1),0_0_0_1px_rgba(34,211,238,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22d3ee]/60 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#22d3ee] to-[#60a5fa] px-6 py-3 text-sm font-semibold text-[#020617] shadow-[0_14px_34px_-18px_rgba(34,211,238,0.7),0_0_0_1px_rgba(34,211,238,0.25)] transition-[transform,filter,box-shadow] hover:scale-[1.01] hover:brightness-110 hover:shadow-[0_18px_50px_-18px_rgba(34,211,238,0.95),0_0_0_1px_rgba(34,211,238,0.35)] active:scale-[0.99] active:brightness-125 active:shadow-[0_20px_60px_-18px_rgba(34,211,238,1),0_0_0_1px_rgba(34,211,238,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22d3ee]/60 sm:w-auto"
                 >
                   Open waitlist form
                 </a>
-                <p className="text-sm text-white/55">
-                  Opens securely in a new tab.
-                </p>
               </div>
-
-              <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
-                <iframe
-                  title="Satokey waitlist form"
-                  src={ZAPIER_WAITLIST_URL}
-                  className="h-[760px] w-full"
-                  loading="lazy"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-
-              <p className="mt-4 text-xs text-white/45">
-                If the embedded form doesn’t load on your device, use “Open waitlist form” above.
-              </p>
             </div>
           </div>
         </div>
