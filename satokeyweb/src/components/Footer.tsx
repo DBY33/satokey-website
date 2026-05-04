@@ -3,7 +3,7 @@ export function Footer() {
 
   return (
     <footer
-      className="border-t border-white/[0.06] px-4 py-8 sm:px-6 lg:px-8"
+      className="relative z-10 border-t border-white/[0.08] bg-glassy-dark-blue px-4 py-8 sm:px-6 lg:px-8"
       role="contentinfo"
       aria-label="Site footer"
     >

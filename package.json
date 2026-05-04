@@ -1,0 +1,9 @@
+{
+  "name": "satkoeky-website-root",
+  "private": true,
+  "scripts": {
+    "dev": "cd satokeyweb && npm run dev",
+    "build": "cd satokeyweb && npm run build",
+    "preview": "cd satokeyweb && npm run preview"
+  }
+}

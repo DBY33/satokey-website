@@ -8,26 +8,26 @@ export function AppDownload() {
   return (
     <section
       id="install-the-app"
-      className="scroll-mt-20 border-t border-white/[0.08] bg-black px-4 py-28 sm:px-6 sm:py-32 lg:px-8"
+      className="scroll-mt-20 border-t border-white/[0.08] bg-tech-section px-4 py-32 sm:px-6 sm:py-36 lg:px-8"
       aria-labelledby="install-the-app-heading"
     >
-      <div className="relative mx-auto max-w-4xl rounded-2xl border border-white/[0.1] bg-black px-8 py-20 sm:px-14 sm:py-24">
-        {/* Blur orbs clipped to rounded card */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl" aria-hidden>
-          <div
-            className="absolute -top-24 left-1/2 h-32 w-64 -translate-x-1/2 rounded-full bg-[#22d3ee]/[0.04] blur-[100px]"
-            aria-hidden
-          />
-          <div
-            className="absolute -bottom-12 right-0 h-24 w-48 rounded-full bg-[#10b981]/[0.03] blur-[80px]"
-            aria-hidden
-          />
-        </div>
-
+      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/[0.12] bg-black px-8 py-24 shadow-[0_0_0_1px_rgba(34,211,238,0.10),0_44px_140px_-70px_rgba(34,211,238,0.32)] sm:px-16 sm:py-28">
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 70% 55% at 50% 0%, rgba(34,211,238,0.16), transparent 60%), radial-gradient(ellipse 55% 50% at 85% 65%, rgba(99,102,241,0.12), transparent 60%)",
+          }}
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/55 to-transparent"
+          aria-hidden
+        />
         <div className="relative flex flex-col items-center text-center">
           <motion.h2
             id="install-the-app-heading"
-            className="section-heading text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+            className="section-heading text-4xl font-semibold tracking-tight text-white sm:text-5xl"
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -36,7 +36,7 @@ export function AppDownload() {
             Install the app
           </motion.h2>
           <motion.p
-            className="mt-4 max-w-md text-white/70"
+            className="mt-5 max-w-xl text-white/70 sm:text-lg"
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -47,7 +47,7 @@ export function AppDownload() {
           </motion.p>
 
           <motion.div
-            className="mt-12 flex flex-col items-center gap-5 pb-6 sm:flex-row sm:justify-center sm:gap-6 sm:pb-8"
+            className="mt-14 flex flex-col items-center gap-6 pb-6 sm:flex-row sm:justify-center sm:gap-10 sm:pb-10"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
@@ -67,16 +67,16 @@ export function AppDownload() {
               }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              <LogoIcon size={180} />
+              <LogoIcon size={112} />
             </motion.div>
 
             {/* Store badges - App Store (cyan) and Play Store (green) icons */}
-            <div className="flex flex-col items-center gap-5 sm:flex-row sm:gap-8">
+            <div className="flex flex-col items-center gap-5 sm:flex-row sm:gap-10">
               <motion.a
                 href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-14 min-w-[200px] items-center justify-center gap-3 rounded-xl border border-white/20 bg-black/40 px-6 py-3 transition-colors duration-200 hover:border-[#22d3ee]/60 hover:bg-black/50 focus:outline-none focus:ring-2 focus:ring-[#22d3ee]/50 focus:ring-offset-2 focus:ring-offset-[#020617]"
+                className="inline-flex h-16 min-w-[220px] items-center justify-center gap-3 rounded-2xl border border-white/20 bg-black/45 px-7 py-3.5 transition-colors duration-200 hover:border-[#22d3ee]/60 hover:bg-black/55 focus:outline-none focus:ring-2 focus:ring-[#22d3ee]/50 focus:ring-offset-2 focus:ring-offset-[#020617]"
                 aria-label="Download Satokey on the App Store"
                 variants={{
                   hidden: { opacity: 0, y: 12 },
@@ -88,7 +88,7 @@ export function AppDownload() {
               >
                 {/* Apple logo - official white on dark (App Store badge style) */}
                 <svg
-                  className="h-8 w-8 shrink-0"
+                  className="h-9 w-9 shrink-0"
                   viewBox="0 0 24 24"
                   fill="#ffffff"
                   aria-hidden
@@ -108,7 +108,7 @@ export function AppDownload() {
                 href={PLAY_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-14 min-w-[200px] items-center justify-center gap-3 rounded-xl border border-white/20 bg-black/40 px-6 py-3 transition-colors duration-200 hover:border-[#22d3ee]/60 hover:bg-black/50 focus:outline-none focus:ring-2 focus:ring-[#22d3ee]/50 focus:ring-offset-2 focus:ring-offset-[#020617]"
+                className="inline-flex h-16 min-w-[220px] items-center justify-center gap-3 rounded-2xl border border-white/20 bg-black/45 px-7 py-3.5 transition-colors duration-200 hover:border-[#22d3ee]/60 hover:bg-black/55 focus:outline-none focus:ring-2 focus:ring-[#22d3ee]/50 focus:ring-offset-2 focus:ring-offset-[#020617]"
                 aria-label="Get Satokey on Google Play"
                 variants={{
                   hidden: { opacity: 0, y: 12 },
@@ -120,7 +120,7 @@ export function AppDownload() {
               >
                 {/* Google Play icon - custom color swap: green→blue, yellow→green, red→yellow, blue→red */}
                 <svg
-                  className="h-8 w-8 shrink-0"
+                  className="h-9 w-9 shrink-0"
                   viewBox="0 0 24 24"
                   aria-hidden
                 >

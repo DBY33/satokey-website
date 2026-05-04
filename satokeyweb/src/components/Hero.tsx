@@ -33,9 +33,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 overflow-hidden"
         aria-hidden
       >
-        <div className="absolute -top-40 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-[#22d3ee]/[0.05] blur-[120px]" />
-        <div className="absolute bottom-32 right-1/4 h-56 w-56 rounded-full bg-[#10b981]/[0.04] blur-[100px]" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#020617] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#020617]/80 to-transparent" />
       </div>
 
       <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">

@@ -76,6 +76,61 @@ function useVaultOpenSound() {
     lockOsc2.start(lockStart);
     lockOsc2.stop(lockStart + 0.05);
 
+    /* 1b) Door motion — single cohesive metal door movement (scrape + resonance) */
+    const doorStart = now + 0.07;
+
+    // 1b-1) Metallic scrape/creak: filtered noise with moving resonance
+    const scrapeDur = 0.78;
+    const scrapeBufSize = Math.max(1, Math.floor(ctx.sampleRate * scrapeDur));
+    const scrapeBuf = ctx.createBuffer(1, scrapeBufSize, ctx.sampleRate);
+    const scrapeCh = scrapeBuf.getChannelData(0);
+    for (let i = 0; i < scrapeBufSize; i++) {
+      const t = i / ctx.sampleRate;
+      const attack = 1 - Math.exp(-t / 0.045);
+      const decay = Math.exp(-t / 0.6);
+      const env = attack * decay;
+      const n = (Math.random() * 2 - 1) * 0.9 + (Math.random() * 2 - 1) * 0.25;
+      scrapeCh[i] = n * env;
+    }
+    const scrapeSrc = ctx.createBufferSource();
+    scrapeSrc.buffer = scrapeBuf;
+
+    const scrapeBP = ctx.createBiquadFilter();
+    scrapeBP.type = "bandpass";
+    scrapeBP.frequency.setValueAtTime(850, doorStart);
+    scrapeBP.frequency.linearRampToValueAtTime(1900, doorStart + scrapeDur * 0.55);
+    scrapeBP.frequency.linearRampToValueAtTime(1200, doorStart + scrapeDur);
+    scrapeBP.Q.setValueAtTime(2.2, doorStart);
+    scrapeBP.Q.linearRampToValueAtTime(9.0, doorStart + scrapeDur);
+
+    const scrapeHP = ctx.createBiquadFilter();
+    scrapeHP.type = "highpass";
+    scrapeHP.frequency.setValueAtTime(420, doorStart);
+    scrapeHP.Q.setValueAtTime(0.75, doorStart);
+
+    const scrapeGain = ctx.createGain();
+    scrapeGain.connect(masterGain);
+    scrapeGain.gain.setValueAtTime(0, doorStart);
+    scrapeGain.gain.linearRampToValueAtTime(0.18, doorStart + 0.09);
+    scrapeGain.gain.linearRampToValueAtTime(0.12, doorStart + 0.32);
+    scrapeGain.gain.exponentialRampToValueAtTime(0.001, doorStart + scrapeDur);
+
+    // Resonant tail: short delay feedback to mimic metal cavity/comb resonance.
+    const scrapeDelay = ctx.createDelay(0.2);
+    scrapeDelay.delayTime.setValueAtTime(0.032, doorStart);
+    const scrapeFb = ctx.createGain();
+    scrapeFb.gain.setValueAtTime(0.18, doorStart);
+    scrapeFb.gain.exponentialRampToValueAtTime(0.001, doorStart + scrapeDur);
+    scrapeDelay.connect(scrapeFb);
+    scrapeFb.connect(scrapeDelay);
+
+    scrapeSrc.connect(scrapeBP);
+    scrapeBP.connect(scrapeHP);
+    scrapeHP.connect(scrapeGain);
+    scrapeHP.connect(scrapeDelay);
+    scrapeDelay.connect(scrapeGain);
+    scrapeSrc.start(doorStart);
+
     /* 2) Door rumble — massive weight, slow pitch drift + detuned layer for thickness */
     const rumbleGain1 = ctx.createGain();
     rumbleGain1.connect(masterGain);
@@ -377,8 +432,8 @@ export function VaultVisual() {
         {/* Interior - visible only when door opens (hover or tap) */}
         <div
           className="absolute left-1/2 top-1/2 z-0 h-28 w-28 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full transition-opacity duration-300 md:h-32 md:w-32"
-          style={{ opacity: isOpen ? 1 : 0 }}
           style={{
+            opacity: isOpen ? 1 : 0,
             background: "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%)",
             boxShadow: "inset 0 2px 20px rgba(0,0,0,0.6)",
           }}
@@ -459,6 +514,26 @@ export function VaultVisual() {
             },
           }}
         >
+          {/* Specular sweep + brushed metal texture for extra realism */}
+          <div
+            className="pointer-events-none absolute inset-0 rounded-full"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.06) 22%, transparent 45%, rgba(0,0,0,0.08) 70%, transparent 100%), repeating-linear-gradient(20deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 6px)",
+              mixBlendMode: "overlay",
+              opacity: 0.85,
+            }}
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute inset-[8%] rounded-full"
+            style={{
+              boxShadow:
+                "inset 0 0 0 1px rgba(255,255,255,0.14), inset 0 0 22px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,0,0,0.35)",
+              opacity: 0.95,
+            }}
+            aria-hidden
+          />
           {/* Horizontal bolt - steel bar, rotates with wheel (unlock) */}
           <motion.div
             className="absolute left-1/2 top-1/2 h-1 w-full -translate-x-1/2 -translate-y-1/2 md:h-1.5"

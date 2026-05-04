@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Satokey design tokens */
+  /* Minimalist Cyberpunk design tokens */
   --color-deep-space: #020617;
   --color-electric-cyan: #22d3ee;
   --color-security-green: #10b981;
@@ -10,6 +10,8 @@
 
 html {
   scroll-behavior: smooth;
+  min-height: 100%;
+  background-color: #020617;
 }
 
 @layer base {
@@ -17,14 +19,35 @@ html {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
-    background: #050a14;
-    color: rgba(255, 255, 255, 0.9);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.92);
     font-family: var(--font-sans);
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.65;
+  }
+
+  ::selection {
+    background: rgba(34, 211, 238, 0.22);
+  }
+
+  @keyframes satokey-float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+      filter: drop-shadow(0 0 0 rgba(34, 211, 238, 0));
+    }
+    50% {
+      transform: translateY(-7px) rotate(-1.5deg);
+      filter: drop-shadow(0 10px 18px rgba(34, 211, 238, 0.22));
+    }
+  }
+
+  .satokey-logo-float {
+    animation: satokey-float 3.2s ease-in-out infinite;
+    will-change: transform;
   }
 
   /* Section heading consistency */
@@ -56,9 +79,16 @@ html {
     color: rgba(255, 255, 255, 0.6);
   }
 
-  /* Solid dark blue – same as body, for nav and sections */
+  /* Nav / footer: premium glass for separation */
   .bg-glassy-dark-blue {
-    background: #050a14;
+    background-color: rgba(2, 6, 23, 0.82);
+    backdrop-filter: blur(12px) saturate(1.08);
+    -webkit-backdrop-filter: blur(12px) saturate(1.08);
+  }
+
+  /* Content sections: same plane as global background */
+  .bg-tech-section {
+    background-color: transparent;
   }
 
   /* Nav logo: fixed box so full icon always visible, never clipped */

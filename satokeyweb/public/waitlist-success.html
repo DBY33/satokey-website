@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#020617" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Satokey — Waitlist confirmed</title>
+    <style>
+      :root { color-scheme: dark; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        background: #020617;
+        color: rgba(255, 255, 255, 0.92);
+      }
+      .wrap {
+        min-height: 100%;
+        display: grid;
+        place-items: center;
+        padding: 40px 16px;
+      }
+      .card {
+        width: min(720px, 92vw);
+        border-radius: 28px;
+        border: 1px solid rgba(255,255,255,0.10);
+        background: rgba(0,0,0,0.6);
+        box-shadow:
+          0 0 0 1px rgba(34,211,238,0.10),
+          0 40px 120px -55px rgba(34,211,238,0.35);
+        padding: 44px 22px;
+        position: relative;
+        overflow: hidden;
+      }
+      .glow {
+        position: absolute;
+        inset: -40%;
+        background:
+          radial-gradient(ellipse 55% 40% at 50% 20%, rgba(34,211,238,0.22), transparent 60%),
+          radial-gradient(ellipse 55% 40% at 70% 65%, rgba(99,102,241,0.16), transparent 60%);
+        filter: blur(70px);
+        pointer-events: none;
+      }
+      .topline {
+        position: absolute;
+        inset-inline: 0;
+        top: 0;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(34,211,238,0.55), transparent);
+        pointer-events: none;
+      }
+      h1 {
+        margin: 0;
+        font-size: 34px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+      }
+      p {
+        margin: 14px 0 0;
+        color: rgba(255,255,255,0.68);
+        font-size: 16px;
+        line-height: 1.65;
+      }
+      .btn {
+        margin-top: 26px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 22px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        color: #020617;
+        background: linear-gradient(90deg, #22d3ee, #60a5fa);
+        box-shadow:
+          0 16px 40px -18px rgba(34,211,238,0.7),
+          0 0 0 1px rgba(34,211,238,0.25);
+        transition: transform 120ms ease, filter 120ms ease, opacity 120ms ease;
+      }
+      .btn:hover { filter: brightness(1.1); opacity: 0.98; transform: translateY(-1px); }
+      .btn:active { filter: brightness(1.18); transform: translateY(0px) scale(0.99); }
+      .small {
+        margin-top: 18px;
+        font-size: 12px;
+        color: rgba(255,255,255,0.45);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card" role="status" aria-live="polite">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="topline" aria-hidden="true"></div>
+
+        <h1>You have signed up to the waitlist.</h1>
+        <p>
+          Thank you — we’ll notify you when Satokey launches.
+        </p>
+
+        <a class="btn" href="/" aria-label="Return to Satokey homepage">
+          Return to homepage
+        </a>
+
+        <div class="small">If you don’t get redirected, you can always go back to the homepage.</div>
+      </div>
+    </div>
+  </body>
+</html>
+
