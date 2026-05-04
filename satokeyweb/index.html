@@ -18,19 +18,6 @@
     <title>Satokey — Your Crypto Legacy, Secured Forever</title>
   </head>
   <body>
-    <!--
-      Netlify Forms detection fallback for SPA builds.
-      This hidden form ensures Netlify registers `satokey-waitlist` at build time.
-    -->
-    <form name="satokey-waitlist" method="POST" data-netlify="true" data-netlify-honeypot="companyWebsite" hidden>
-      <input type="hidden" name="form-name" value="satokey-waitlist" />
-      <input name="email" type="email" />
-      <input name="phone" type="tel" />
-      <input name="smsConsent" type="text" />
-      <input name="source" type="text" />
-      <input name="companyWebsite" type="text" />
-    </form>
-
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

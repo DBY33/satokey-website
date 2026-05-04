@@ -6,7 +6,7 @@ import { TechBackground } from "./components/TechBackground";
 import { HowItWorks } from "./components/HowItWorks";
 import { Security } from "./components/Security";
 import { Pricing } from "./components/Pricing";
-import { Waitlist } from "./components/Waitlist";
+import { ZapierWaitlist } from "./components/ZapierWaitlist";
 import { AppDownload } from "./components/AppDownload";
 import "./App.css";
 
@@ -71,7 +71,7 @@ function App() {
         <HowItWorks />
         <Security />
         <Pricing />
-        <Waitlist />
+        <ZapierWaitlist />
         <AppDownload />
       </main>
       <Footer />
