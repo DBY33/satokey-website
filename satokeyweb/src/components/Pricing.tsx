@@ -21,7 +21,7 @@ const ACCENT_STYLES: Record<
   }
 > = {
   black: {
-    card: "border border-white/10 bg-gradient-to-b from-[#020617] via-[#01030f] to-black shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_24px_64px_-22px_rgba(0,0,0,0.8)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_30px_86px_-26px_rgba(0,0,0,0.85)]",
+    card: "border border-white/10 bg-gradient-to-b from-[#0a0a12]/90 via-[#050508]/85 to-[#050505]/90 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_24px_64px_-22px_rgba(0,0,0,0.85)] hover:shadow-[0_0_0_1px_rgba(34,211,238,0.15),0_30px_86px_-26px_rgba(0,0,0,0.88)]",
     aura: "bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(255,255,255,0.06),transparent_62%)]",
     topLine: "bg-gradient-to-r from-transparent via-white/20 to-transparent",
     badge: "border border-white/25 bg-white/[0.08] text-white/90 shadow-[0_0_28px_rgba(255,255,255,0.18)]",
@@ -32,7 +32,7 @@ const ACCENT_STYLES: Record<
     check: "text-white/55",
   },
   navy: {
-    card: "border border-[#1e3a5f]/55 bg-gradient-to-b from-[#06101d] via-[#020617] to-black shadow-[0_0_0_1px_rgba(30,58,95,0.18),0_30px_78px_-24px_rgba(0,0,0,0.82)] hover:shadow-[0_0_0_1px_rgba(30,58,95,0.26),0_34px_92px_-28px_rgba(0,0,0,0.86),0_0_72px_-20px_rgba(30,58,95,0.35)]",
+    card: "border border-[#22d3ee]/20 bg-gradient-to-b from-[#06101d]/95 via-[#050508]/90 to-[#050505]/95 backdrop-blur-xl shadow-[0_0_0_1px_rgba(34,211,238,0.12),0_30px_78px_-24px_rgba(0,0,0,0.88)] hover:shadow-[0_0_0_1px_rgba(34,211,238,0.22),0_34px_92px_-28px_rgba(0,0,0,0.9),0_0_72px_-20px_rgba(34,211,238,0.25)]",
     aura: "bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(30,58,95,0.3),transparent_62%)]",
     topLine: "bg-gradient-to-r from-transparent via-[#22d3ee]/25 to-transparent",
     badge: "border border-white/25 bg-white/[0.08] text-white/90 shadow-[0_0_28px_rgba(255,255,255,0.18)]",
@@ -43,7 +43,7 @@ const ACCENT_STYLES: Record<
     check: "text-[#60a5fa]",
   },
   white: {
-    card: "border border-white/25 bg-gradient-to-b from-[#0b1220] via-[#020617] to-black shadow-[0_0_0_1px_rgba(255,255,255,0.10),0_30px_84px_-26px_rgba(0,0,0,0.84)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.16),0_36px_98px_-30px_rgba(0,0,0,0.88),0_0_76px_-18px_rgba(255,255,255,0.18)]",
+    card: "border border-white/20 bg-gradient-to-b from-[#0b1220]/95 via-[#050508]/92 to-[#050505]/95 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_30px_84px_-26px_rgba(0,0,0,0.88)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.2),0_36px_98px_-30px_rgba(0,0,0,0.9),0_0_76px_-18px_rgba(255,255,255,0.15)]",
     aura: "bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(255,255,255,0.14),transparent_62%)]",
     topLine: "bg-gradient-to-r from-transparent via-white/45 to-transparent",
     badge: "border border-white/25 bg-white/[0.08] text-white/90 shadow-[0_0_28px_rgba(255,255,255,0.18)]",
@@ -57,11 +57,11 @@ const ACCENT_STYLES: Record<
 
 const STANDARD_FEATURES = [
   "Smart Vault monitoring & paymaster services—we sponsor gas for your six‑month heartbeat taps (zero gas to you)",
-  "One designated Legacy Contact with on-chain claim window after inactivity",
-  "Dead man’s switch logic enforced by your Smart Vault contract—not guesswork",
-  "30‑day on-chain countdown before claim; you can veto anytime with Satokey hardware",
+  "One designated Legacy Contact with a defined on-chain claim path",
+  "Dead man’s switch enforced by your Smart Vault contract (auditable rules)",
+  "30‑day on‑chain countdown after inactivity; veto anytime with Satokey hardware",
   "Six‑month heartbeat cadence with push, email, and SMS reminders",
-  "Automated legacy execution when conditions are met on-chain",
+  "Automated legacy execution when on‑chain conditions are satisfied",
 ];
 
 const PRO_FEATURES = [
@@ -91,7 +91,7 @@ const PLANS = [
     price: "$9.99",
     period: "per month",
     description:
-      "Legacy Protection for one Smart Vault and one Legacy Contact. On-chain certainty: heartbeat gas sponsored, countdown and claim rules enforced by your contract—not by opaque storage.",
+      "On-chain certainty for one Smart Vault and one Legacy Contact. Heartbeat gas is covered; countdown and claim rules are enforced by your contract—not opaque storage.",
     features: STANDARD_FEATURES,
     Icon: Lock,
     accent: "black",
@@ -140,7 +140,7 @@ export function Pricing() {
           }}
           aria-hidden
         />
-        <div className="relative rounded-[32px] border border-white/10 bg-black/40 px-5 py-14 shadow-[0_0_0_1px_rgba(34,211,238,0.08),0_40px_120px_-55px_rgba(34,211,238,0.35)] backdrop-blur-md sm:px-10 sm:py-16">
+        <div className="cyber-glass-strong relative rounded-[32px] px-5 py-14 sm:px-10 sm:py-16">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 12 }}
@@ -155,7 +155,7 @@ export function Pricing() {
             Pricing
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base text-white/65 sm:text-lg">
-            Simple, transparent pricing. Choose the plan that fits your Smart Vault—from one Legacy Contact to full family governance on-chain.
+            Transparent pricing for on-chain legacy. Scale from one Smart Vault to full family governance—gasless heartbeats where Satokey sponsors your check-ins.
           </p>
         </motion.div>
 
@@ -176,7 +176,7 @@ export function Pricing() {
             return (
             <motion.article
               key={id}
-              className={`group relative flex flex-col overflow-hidden rounded-3xl p-6 transition-transform duration-300 will-change-transform hover:-translate-y-1 sm:p-8 ${styles.card}`}
+              className={`group relative flex flex-col overflow-hidden rounded-3xl p-6 transition-transform duration-300 will-change-transform hover:-translate-y-1 sm:p-8 ${styles.card} ${id === "standard" ? "pricing-legacy-shimmer" : ""}`}
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
@@ -191,6 +191,11 @@ export function Pricing() {
                 className={`pointer-events-none absolute inset-x-0 top-0 h-px ${styles.topLine}`}
                 aria-hidden
               />
+              {id === "standard" && (
+                <span className="absolute left-5 top-5 rounded-full border border-[#22d3ee]/35 bg-[#22d3ee]/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#22d3ee]">
+                  Heartbeat-ready
+                </span>
+              )}
               {recommended && (
                 <span
                   className={`absolute right-5 top-5 rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] ${styles.badge}`}
@@ -213,7 +218,7 @@ export function Pricing() {
                     {label}
                   </span>
                   <div className="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-                    <span className="text-3xl font-bold tracking-tight text-white sm:text-[2.25rem]">{price}</span>
+                    <span className="font-mono-tech text-3xl font-bold tracking-tight text-white sm:text-[2.25rem]">{price}</span>
                     <span className="text-sm text-white/50">{period}</span>
                   </div>
                 </div>
@@ -283,7 +288,7 @@ export function Pricing() {
           transition={{ duration: 0.35, delay: 0.15 }}
         >
           <p className="mx-auto max-w-xl text-sm text-white/55 sm:text-base">
-            Join the waitlist to lock in your plan. No payment required upfront—billing starts only when you activate your Smart Vault.
+            Join the waitlist to lock in your plan. No payment upfront—billing starts when you activate your Smart Vault.
           </p>
           <ScrambleButton
             href="#waitlist"
@@ -291,7 +296,7 @@ export function Pricing() {
               e.preventDefault();
               document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth", block: "start" });
             }}
-            className="mt-6 inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#1e3a5f] to-[#0f172a] px-5 py-2.5 text-sm font-medium tracking-wide text-white outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-[#22d3ee]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617]"
+            className="neon-button-outline mt-6 inline-flex items-center gap-2.5 rounded-full px-6 py-2.5 text-sm font-semibold tracking-wide outline-none focus-visible:ring-2 focus-visible:ring-[#22d3ee]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
             aria-label="Join the waitlist"
             scrambleOnHover={false}
             icon={<Download className="h-4 w-4 shrink-0 text-white/90" aria-hidden />}

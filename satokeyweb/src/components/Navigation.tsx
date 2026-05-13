@@ -62,7 +62,7 @@ export function Navigation() {
                 e.preventDefault();
                 handleLaunchVault();
               }}
-              className="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2.5 text-sm font-semibold tracking-wide text-black outline-none transition-colors hover:bg-neutral-200 focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
+              className="neon-button-outline inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-semibold tracking-wide outline-none focus-visible:ring-2 focus-visible:ring-[#22d3ee]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
               aria-label="Join the waitlist"
               as="a"
               scrambleOnHover={false}
@@ -75,7 +75,7 @@ export function Navigation() {
           {/* Dropdown menu button (all devices) */}
           <button
             type="button"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2.5 text-sm font-medium tracking-wide text-white/90 transition-colors hover:border-white/25 hover:bg-white/[0.07] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+            className="cyber-glass inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold tracking-wide text-white/90 transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_28px_-8px_rgba(34,211,238,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22d3ee]/50"
             onClick={() => setMobileMenuOpen((open) => !open)}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
@@ -111,7 +111,7 @@ export function Navigation() {
                 <a
                   key={href}
                   href={href}
-                  className="rounded-lg px-3 py-2.5 text-sm font-medium text-white/90 hover:bg-white/5 hover:text-white"
+                  className="rounded-lg px-3 py-2.5 text-sm font-medium text-white/90 transition-colors hover:bg-white/[0.06] hover:text-[#22d3ee]"
                   onClick={handleNavLinkClick()}
                 >
                   {label}

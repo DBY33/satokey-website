@@ -61,7 +61,7 @@ function App() {
       <TechBackground />
       <a
         href="#main"
-        className="fixed left-4 top-4 z-[100] -translate-y-20 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-black shadow-lg transition-transform focus:translate-y-0 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0a0a0a]"
+        className="fixed left-4 top-4 z-[100] -translate-y-20 rounded-lg bg-[#22d3ee] px-4 py-2 text-sm font-semibold text-[#020617] shadow-lg transition-transform focus:translate-y-0 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#020617]"
       >
         Skip to main content
       </a>
