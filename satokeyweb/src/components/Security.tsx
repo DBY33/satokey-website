@@ -51,16 +51,16 @@ export function Security() {
         >
           {/* Glow background */}
           <div className="absolute inset-0 -z-10 blur-3xl">
-            <div className="absolute inset-10 rounded-[32px] bg-gradient-to-br from-[#22d3ee]/35 via-[#6366f1]/25 to-[#0f172a] opacity-70" />
+            <div className="absolute inset-10 rounded-[32px] bg-gradient-to-br from-white/12 via-white/5 to-transparent opacity-80" />
           </div>
 
-          {/* Shield card that feels like a real app badge */}
-          <div className="relative rounded-3xl border border-white/[0.08] bg-black/40 px-10 py-10 shadow-[0_25px_80px_rgba(15,23,42,0.9)] backdrop-blur-xl">
-            <div className="mx-auto flex h-28 w-24 items-center justify-center rounded-3xl bg-gradient-to-b from-[#1e293b] to-[#020617] shadow-[0_20px_50px_rgba(15,23,42,1)]">
-              <div className="relative h-20 w-16 rounded-2xl bg-gradient-to-b from-[#22d3ee] via-[#6366f1] to-[#0ea5e9]">
+          {/* Shield card */}
+          <div className="relative rounded-3xl border border-white/[0.1] bg-black/60 px-10 py-10 shadow-[0_25px_80px_rgba(0,0,0,0.95)] backdrop-blur-xl">
+            <div className="mx-auto flex h-28 w-24 items-center justify-center rounded-3xl bg-gradient-to-b from-neutral-800 to-black shadow-[0_20px_50px_rgba(0,0,0,1)]">
+              <div className="relative h-20 w-16 rounded-2xl bg-gradient-to-b from-neutral-200 via-neutral-400 to-neutral-700">
                 <div className="absolute inset-[3px] rounded-2xl bg-black" />
-                <ShieldCheck className="absolute left-1/2 top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 text-[#38bdf8]" />
-                <div className="absolute inset-x-2 bottom-3 h-1.5 rounded-full bg-gradient-to-r from-[#22d3ee]/70 to-[#0ea5e9]/50 blur-sm" />
+                <ShieldCheck className="absolute left-1/2 top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 text-neutral-300" />
+                <div className="absolute inset-x-2 bottom-3 h-1.5 rounded-full bg-gradient-to-r from-white/40 to-white/10 blur-sm" />
               </div>
             </div>
 
@@ -85,7 +85,7 @@ export function Security() {
         >
           <h2
             id="security-heading"
-            className="section-heading text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+            className="section-heading text-4xl font-bold tracking-tighter text-white sm:text-5xl"
           >
             Security you can explain to your family
           </h2>
@@ -99,7 +99,7 @@ export function Security() {
                 key={title}
                 className="flex gap-4 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-4 sm:p-5"
               >
-                <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.06] text-[#22d3ee]">
+                <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.06] text-white/80">
                   <Icon className="h-5 w-5" strokeWidth={1.6} aria-hidden />
                 </div>
                 <div>

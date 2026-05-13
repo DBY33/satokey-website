@@ -16,7 +16,7 @@ export function Footer() {
             <li>
               <a
                 href="#"
-                className="text-white/50 transition-colors hover:text-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22d3ee]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617] focus-visible:text-white/70"
+                className="text-white/45 transition-colors hover:text-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a] focus-visible:text-white/70"
               >
                 Back to top
               </a>
@@ -24,7 +24,7 @@ export function Footer() {
             <li>
               <a
                 href="#"
-                className="text-white/50 transition-colors hover:text-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22d3ee]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617] focus-visible:text-white/70"
+                className="text-white/45 transition-colors hover:text-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a] focus-visible:text-white/70"
               >
                 Privacy
               </a>
@@ -32,7 +32,7 @@ export function Footer() {
             <li>
               <a
                 href="#"
-                className="text-white/50 transition-colors hover:text-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22d3ee]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617] focus-visible:text-white/70"
+                className="text-white/45 transition-colors hover:text-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a] focus-visible:text-white/70"
               >
                 Terms
               </a>

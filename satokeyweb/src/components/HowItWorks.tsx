@@ -36,12 +36,12 @@ const STEPS = [
 
 function PasskeyLockVisual() {
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/50 p-6 shadow-[0_0_0_1px_rgba(34,211,238,0.08),0_40px_120px_-60px_rgba(34,211,238,0.35)] backdrop-blur-md">
+    <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-neutral-950/80 p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_40px_100px_-50px_rgba(0,0,0,0.9)] backdrop-blur-md">
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 70% 55% at 50% 15%, rgba(34,211,238,0.18), transparent 60%), radial-gradient(ellipse 70% 55% at 80% 75%, rgba(99,102,241,0.12), transparent 60%)",
+            "radial-gradient(ellipse 70% 55% at 50% 15%, rgba(255,255,255,0.06), transparent 60%), radial-gradient(ellipse 70% 55% at 80% 75%, rgba(255,255,255,0.03), transparent 60%)",
         }}
         aria-hidden
       />
@@ -49,7 +49,7 @@ function PasskeyLockVisual() {
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
             <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/5 ring-1 ring-white/10">
-              <KeyRound className="h-5 w-5 text-[#22d3ee]" aria-hidden />
+              <KeyRound className="h-5 w-5 text-white/80" aria-hidden />
             </span>
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Passkey vault</p>
@@ -71,12 +71,12 @@ function PasskeyLockVisual() {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <motion.div
-              className="relative flex items-center gap-3 rounded-2xl border border-white/10 bg-[#020617]/70 px-4 py-3"
+              className="relative flex items-center gap-3 rounded-2xl border border-white/10 bg-[#0a0a0a]/70 px-4 py-3"
               animate={{ x: [0, 26, 26, 0] }}
               transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut", times: [0, 0.35, 0.65, 1] }}
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#22d3ee]/10 ring-1 ring-[#22d3ee]/20">
-                <KeyRound className="h-5 w-5 text-[#22d3ee]" aria-hidden />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/8 ring-1 ring-white/12">
+                <KeyRound className="h-5 w-5 text-white/85" aria-hidden />
               </div>
               <div className="min-w-0">
                 <p className="text-sm font-semibold text-white/90">Passkey</p>
@@ -84,7 +84,7 @@ function PasskeyLockVisual() {
               </div>
 
               <motion.div
-                className="pointer-events-none absolute -right-7 top-1/2 h-[2px] w-10 -translate-y-1/2 bg-gradient-to-r from-[#22d3ee]/0 via-[#22d3ee]/60 to-[#22d3ee]/0"
+                className="pointer-events-none absolute -right-7 top-1/2 h-[2px] w-10 -translate-y-1/2 bg-gradient-to-r from-transparent via-white/35 to-transparent"
                 animate={{ opacity: [0.2, 1, 0.2] }}
                 transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
                 aria-hidden
@@ -95,8 +95,8 @@ function PasskeyLockVisual() {
           {/* Lock core */}
           <div className="relative flex items-center justify-center">
             <motion.div
-              className="relative grid h-24 w-24 place-items-center rounded-3xl border border-white/10 bg-[#020617]/60 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]"
-              animate={{ boxShadow: ["inset 0 0 0 1px rgba(255,255,255,0.05)", "inset 0 0 0 1px rgba(34,211,238,0.18)"] }}
+              className="relative grid h-24 w-24 place-items-center rounded-3xl border border-white/10 bg-[#0a0a0a]/80 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]"
+              animate={{ boxShadow: ["inset 0 0 0 1px rgba(255,255,255,0.06)", "inset 0 0 0 1px rgba(255,255,255,0.14)"] }}
               transition={{ duration: 1.8, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
             >
               <Shield className="h-10 w-10 text-white/85" aria-hidden />
@@ -104,7 +104,7 @@ function PasskeyLockVisual() {
                 className="pointer-events-none absolute inset-0 rounded-3xl"
                 style={{
                   background:
-                    "radial-gradient(circle at 50% 35%, rgba(34,211,238,0.14), transparent 60%)",
+                    "radial-gradient(circle at 50% 35%, rgba(255,255,255,0.08), transparent 60%)",
                 }}
                 animate={{ opacity: [0.35, 0.9, 0.35] }}
                 transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
@@ -122,7 +122,7 @@ function PasskeyLockVisual() {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <motion.div
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#020617]/70 px-4 py-3"
+              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#0a0a0a]/70 px-4 py-3"
               animate={{ opacity: [0.55, 1, 0.55] }}
               transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
             >
@@ -162,7 +162,7 @@ export function HowItWorks() {
         >
           <h2
             id="how-it-works-heading"
-            className="section-heading text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+            className="section-heading text-4xl font-bold tracking-tighter text-white sm:text-5xl"
           >
             How it works
           </h2>
@@ -194,7 +194,7 @@ export function HowItWorks() {
                 transition={{ duration: 0.35, ease: "easeOut" }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#22d3ee]/10 text-[#22d3ee] ring-1 ring-[#22d3ee]/25">
+                  <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-white/[0.06] text-white/85 ring-1 ring-white/12">
                     <Icon className="h-5 w-5" strokeWidth={1.6} aria-hidden />
                   </div>
                   <div className="min-w-0">
