@@ -301,9 +301,9 @@ function useVaultOpenSound() {
   return { schedulePlay, cancelSchedule };
 }
 
-const ACCENT = "rgba(255, 255, 255, 0.88)";
-const ACCENT_GLOW = "rgba(255, 255, 255, 0.12)";
-const NEUTRAL_GLOW = "rgba(115, 115, 115, 0.35)";
+const CYAN = "rgba(34, 211, 238, 0.88)";
+const CYAN_GLOW = "rgba(34, 211, 238, 0.45)";
+const DARK_BLUE_GLOW = "rgba(30, 58, 138, 0.55)";
 /* Steel metallic palette - cooler, higher contrast */
 const STEEL_HI = "rgba(255, 255, 255, 0.5)";
 const STEEL = "rgba(185, 198, 212, 0.22)";
@@ -344,9 +344,9 @@ export function VaultVisual() {
       {/* Subtle halo behind vault - lights up when vault is open */}
       <motion.div
         className="absolute -inset-4 rounded-2xl blur-[80px]"
-        style={{ backgroundColor: "rgba(255, 255, 255, 0.04)" }}
+        style={{ backgroundColor: "rgba(30, 58, 138, 0.08)" }}
         animate={{
-          backgroundColor: isOpen ? "rgba(255, 255, 255, 0.08)" : "rgba(255, 255, 255, 0.04)",
+          backgroundColor: isOpen ? "rgba(30, 58, 138, 0.35)" : "rgba(30, 58, 138, 0.08)",
         }}
         transition={{ duration: 0.4 }}
         aria-hidden
@@ -372,8 +372,8 @@ export function VaultVisual() {
               inset -3px -3px 12px rgba(0,0,0,0.7),
               inset 0 8px 24px rgba(0,0,0,0.5),
               0 0 0 1px rgba(255,255,255,0.25),
-              0 0 0 2px rgba(255, 255, 255, 0.1),
-              0 0 40px -10px ${ACCENT_GLOW}
+              0 0 0 2px rgba(34, 211, 238, 0.1),
+              0 0 40px -10px ${CYAN_GLOW}
             `,
           }}
           variants={{
@@ -383,9 +383,9 @@ export function VaultVisual() {
                 inset -3px -3px 12px rgba(0,0,0,0.65),
                 inset 0 8px 24px rgba(0,0,0,0.45),
                 0 0 0 1px rgba(255,255,255,0.3),
-                0 0 0 2px rgba(255, 255, 255, 0.25),
-                0 0 50px -8px ${NEUTRAL_GLOW},
-                0 0 80px -10px ${NEUTRAL_GLOW}
+                0 0 0 2px rgba(30, 58, 138, 0.5),
+                0 0 50px -8px ${DARK_BLUE_GLOW},
+                0 0 80px -10px ${DARK_BLUE_GLOW}
               `,
               transition: { duration: 0.3 },
             },
@@ -422,7 +422,7 @@ export function VaultVisual() {
             rest: { rotate: 0, transition: { duration: 0.35, ease: "easeOut" } },
             hover: {
               rotate: -14,
-              boxShadow: `inset -1px 0 1px rgba(255,255,255,0.25), inset 1px 0 2px rgba(0,0,0,0.45), 0 0 0 1px rgba(0,0,0,0.25), 0 0 14px -2px ${ACCENT_GLOW}`,
+              boxShadow: `inset -1px 0 1px rgba(255,255,255,0.25), inset 1px 0 2px rgba(0,0,0,0.45), 0 0 0 1px rgba(0,0,0,0.25), 0 0 14px -2px ${CYAN_GLOW}`,
               transition: { duration: 0.28, ease: "easeOut" },
             },
           }}
@@ -440,7 +440,7 @@ export function VaultVisual() {
           aria-hidden
         >
           <div className="absolute inset-1 flex flex-col rounded-full md:inset-1.5">
-            <span className="mb-0.5 flex items-center justify-center gap-0.5 text-[8px] font-semibold uppercase tracking-wider text-white/80 md:text-[9px]">
+            <span className="mb-0.5 flex items-center justify-center gap-0.5 text-[8px] font-semibold uppercase tracking-wider text-[#22d3ee]/95 md:text-[9px]">
               <span aria-hidden>₿</span> BTC/USD
             </span>
             <svg
@@ -457,7 +457,7 @@ export function VaultVisual() {
               <path
                 d="M0,42 Q8,38 16,35 T32,28 T48,22 T56,26 T64,18 T80,12 T100,8"
                 fill="none"
-                stroke="#e5e7eb"
+                stroke="#22d3ee"
                 strokeWidth="1.2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -471,8 +471,8 @@ export function VaultVisual() {
               />
               <defs>
                 <linearGradient id="vault-chart-gradient" x1="0" y1="1" x2="0" y2="0">
-                  <stop offset="0%" stopColor="#e5e7eb" stopOpacity="0.35" />
-                  <stop offset="100%" stopColor="#e5e7eb" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.4" />
+                  <stop offset="100%" stopColor="#22d3ee" stopOpacity="0" />
                 </linearGradient>
               </defs>
             </svg>
@@ -489,8 +489,8 @@ export function VaultVisual() {
               inset -5px -5px 20px rgba(0,0,0,0.7),
               inset 0 10px 32px rgba(0,0,0,0.5),
               0 0 0 1px rgba(255,255,255,0.3),
-              0 0 0 2px rgba(255, 255, 255, 0.08),
-              0 0 30px -10px ${ACCENT_GLOW}
+              0 0 0 2px rgba(34, 211, 238, 0.08),
+              0 0 30px -10px ${CYAN_GLOW}
             `,
             transformOrigin: "left center",
             backfaceVisibility: "hidden",
@@ -507,8 +507,8 @@ export function VaultVisual() {
                 inset -5px -5px 20px rgba(0,0,0,0.65),
                 inset 0 10px 32px rgba(0,0,0,0.45),
                 0 0 0 1px rgba(255,255,255,0.35),
-                0 0 0 2px rgba(255, 255, 255, 0.2),
-                0 0 38px -8px ${ACCENT_GLOW}
+                0 0 0 2px rgba(34, 211, 238, 0.2),
+                0 0 38px -8px ${CYAN_GLOW}
               `,
               transition: { duration: 0.45, delay: 0.4, ease: "easeOut" },
             },
@@ -539,7 +539,7 @@ export function VaultVisual() {
             className="absolute left-1/2 top-1/2 h-1 w-full -translate-x-1/2 -translate-y-1/2 md:h-1.5"
             style={{
               background: `linear-gradient(180deg, ${STEEL} 0%, ${STEEL_MID} 25%, ${STEEL_SHADOW} 50%, ${STEEL_MID} 75%, ${STEEL} 100%)`,
-              boxShadow: "inset 0 2px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.4), 0 0 10px -2px rgba(255,255,255,0.15)",
+              boxShadow: "inset 0 2px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.4), 0 0 10px -2px rgba(34, 211, 238, 0.3)",
               transformOrigin: "center center",
             }}
             variants={{
@@ -560,8 +560,8 @@ export function VaultVisual() {
                 inset 3px 3px 8px rgba(255,255,255,0.15),
                 inset -4px -4px 14px rgba(0,0,0,0.7),
                 inset 0 6px 20px rgba(0,0,0,0.5),
-                0 0 0 1px rgba(255, 255, 255, 0.3),
-                0 0 24px -6px ${ACCENT_GLOW}
+                0 0 0 1px rgba(34, 211, 238, 0.3),
+                0 0 24px -6px ${CYAN_GLOW}
               `,
               transformOrigin: "center center",
             }}
@@ -573,8 +573,8 @@ export function VaultVisual() {
                   inset 3px 3px 8px rgba(255,255,255,0.18),
                   inset -4px -4px 14px rgba(0,0,0,0.65),
                   inset 0 6px 20px rgba(0,0,0,0.45),
-                  0 0 0 1px rgba(255, 255, 255, 0.42),
-                  0 0 30px -6px ${ACCENT_GLOW}
+                  0 0 0 1px rgba(34, 211, 238, 0.42),
+                  0 0 30px -6px ${CYAN_GLOW}
                 `,
                 scale: 1.03,
                 transition: { duration: 0.35, ease: "easeOut" },
@@ -601,14 +601,14 @@ export function VaultVisual() {
                     y1={y1}
                     x2={x2}
                     y2={y2}
-                    stroke={ACCENT}
+                    stroke={CYAN}
                     strokeWidth="3"
                     strokeLinecap="round"
                   />
                 );
               })}
               {/* Center hub - steel */}
-              <circle cx="50" cy="50" r="10" fill={STEEL_SHADOW} stroke={ACCENT} strokeWidth="1.5" />
+              <circle cx="50" cy="50" r="10" fill={STEEL_SHADOW} stroke={CYAN} strokeWidth="1.5" />
             </svg>
           </motion.div>
         </motion.div>

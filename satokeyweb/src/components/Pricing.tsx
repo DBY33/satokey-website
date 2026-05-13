@@ -21,7 +21,7 @@ const ACCENT_STYLES: Record<
   }
 > = {
   black: {
-    card: "border border-white/10 bg-gradient-to-b from-[#0a0a0a] via-[#050505] to-black shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_24px_64px_-22px_rgba(0,0,0,0.8)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_30px_86px_-26px_rgba(0,0,0,0.85)]",
+    card: "border border-white/10 bg-gradient-to-b from-[#020617] via-[#01030f] to-black shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_24px_64px_-22px_rgba(0,0,0,0.8)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_30px_86px_-26px_rgba(0,0,0,0.85)]",
     aura: "bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(255,255,255,0.06),transparent_62%)]",
     topLine: "bg-gradient-to-r from-transparent via-white/20 to-transparent",
     badge: "border border-white/25 bg-white/[0.08] text-white/90 shadow-[0_0_28px_rgba(255,255,255,0.18)]",
@@ -32,55 +32,54 @@ const ACCENT_STYLES: Record<
     check: "text-white/55",
   },
   navy: {
-    card: "border border-white/12 bg-gradient-to-b from-neutral-900/80 via-[#0a0a0a] to-black shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_30px_78px_-24px_rgba(0,0,0,0.85)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_34px_92px_-28px_rgba(0,0,0,0.9)]",
-    aura: "bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(255,255,255,0.06),transparent_62%)]",
-    topLine: "bg-gradient-to-r from-transparent via-white/20 to-transparent",
-    badge: "border border-white/25 bg-white/[0.08] text-white/90 shadow-[0_0_28px_rgba(255,255,255,0.12)]",
-    iconWrap: "bg-white/8 text-white/80 ring-1 ring-white/12",
-    label: "text-white/60",
+    card: "border border-[#1e3a5f]/55 bg-gradient-to-b from-[#06101d] via-[#020617] to-black shadow-[0_0_0_1px_rgba(30,58,95,0.18),0_30px_78px_-24px_rgba(0,0,0,0.82)] hover:shadow-[0_0_0_1px_rgba(30,58,95,0.26),0_34px_92px_-28px_rgba(0,0,0,0.86),0_0_72px_-20px_rgba(30,58,95,0.35)]",
+    aura: "bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(30,58,95,0.3),transparent_62%)]",
+    topLine: "bg-gradient-to-r from-transparent via-[#22d3ee]/25 to-transparent",
+    badge: "border border-white/25 bg-white/[0.08] text-white/90 shadow-[0_0_28px_rgba(255,255,255,0.18)]",
+    iconWrap: "bg-[#1e3a5f]/35 text-[#93c5fd] ring-1 ring-[#60a5fa]/25",
+    label: "text-[#93c5fd]",
     appStoreBtn:
-      "bg-gradient-to-r from-neutral-800 to-black shadow-[0_18px_44px_-24px_rgba(0,0,0,0.8),0_0_0_1px_rgba(255,255,255,0.1)] text-white",
-    check: "text-white/50",
+      "bg-gradient-to-r from-[#1e3a5f] to-[#0f172a] shadow-[0_18px_44px_-24px_rgba(30,58,95,0.7),0_0_0_1px_rgba(96,165,250,0.22)] text-white",
+    check: "text-[#60a5fa]",
   },
   white: {
-    card: "border border-white/25 bg-gradient-to-b from-[#141414] via-[#0a0a0a] to-black shadow-[0_0_0_1px_rgba(255,255,255,0.10),0_30px_84px_-26px_rgba(0,0,0,0.84)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.16),0_36px_98px_-30px_rgba(0,0,0,0.88),0_0_76px_-18px_rgba(255,255,255,0.18)]",
+    card: "border border-white/25 bg-gradient-to-b from-[#0b1220] via-[#020617] to-black shadow-[0_0_0_1px_rgba(255,255,255,0.10),0_30px_84px_-26px_rgba(0,0,0,0.84)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.16),0_36px_98px_-30px_rgba(0,0,0,0.88),0_0_76px_-18px_rgba(255,255,255,0.18)]",
     aura: "bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(255,255,255,0.14),transparent_62%)]",
     topLine: "bg-gradient-to-r from-transparent via-white/45 to-transparent",
     badge: "border border-white/25 bg-white/[0.08] text-white/90 shadow-[0_0_28px_rgba(255,255,255,0.18)]",
     iconWrap: "bg-white/10 text-white/90 ring-1 ring-white/20",
     label: "text-white/85",
     appStoreBtn:
-      "bg-gradient-to-r from-white to-[#e5e7eb] shadow-[0_20px_46px_-24px_rgba(255,255,255,0.25),0_0_0_1px_rgba(255,255,255,0.18)] text-black",
+      "bg-gradient-to-r from-white to-[#e5e7eb] shadow-[0_20px_46px_-24px_rgba(255,255,255,0.25),0_0_0_1px_rgba(255,255,255,0.18)] text-[#020617]",
     check: "text-white/75",
   },
 };
 
 const STANDARD_FEATURES = [
-  "Secure vault for your passkeys and recovery phrases",
-  "One designated legacy contact",
-  "We hold the box but cannot open it—only your legacy contact can",
-  "Access is released only when the automated email is sent to your contact",
-  "Monthly heartbeat check-ins",
-  "Multi-channel reminders (push, email, SMS)",
-  "Automatic release after missed check-ins",
+  "Smart Vault monitoring & paymaster services—we sponsor gas for your six‑month heartbeat taps (zero gas to you)",
+  "One designated Legacy Contact with on-chain claim window after inactivity",
+  "Dead man’s switch logic enforced by your Smart Vault contract—not guesswork",
+  "30‑day on-chain countdown before claim; you can veto anytime with Satokey hardware",
+  "Six‑month heartbeat cadence with push, email, and SMS reminders",
+  "Automated legacy execution when conditions are met on-chain",
 ];
 
 const PRO_FEATURES = [
-  "Everything in Standard, plus:",
-  "Unlimited legacy contacts",
-  "Multiple crypto accounts and wallets",
-  "Separate instructions per asset or account",
-  "Dedicated vault per beneficiary if you choose",
+  "Everything in Legacy Protection, plus:",
+  "Unlimited Legacy Contacts with per‑beneficiary rules and weights",
+  "Multiple Smart Vaults or segmented strategies across wallets",
+  "Separate instructions and claim paths per asset or beneficiary group",
+  "Dedicated vault configuration per beneficiary when you choose",
   "Priority support",
   "Ideal for diverse portfolios and family distribution",
 ];
 
 const ENTERPRISE_FEATURES = [
   "Everything in Pro, plus:",
-  "Unlimited beneficiaries with advanced access rules",
-  "Team / family admin access (multi‑device oversight)",
-  "Custom heartbeat cadence + multiple escalation paths",
-  "Advanced audit trail and activity timeline",
+  "Unlimited beneficiaries with advanced on-chain access rules",
+  "Team / family admin oversight (multi‑device policy views)",
+  "Custom heartbeat cadence + multiple escalation paths (where supported by your vault config)",
+  "Advanced audit trail and on-chain activity timeline",
   "Concierge onboarding and priority support",
   "Best for high‑net‑worth families and complex estates",
 ];
@@ -88,11 +87,11 @@ const ENTERPRISE_FEATURES = [
 const PLANS = [
   {
     id: "standard",
-    label: "Standard",
+    label: "Legacy Protection",
     price: "$9.99",
     period: "per month",
     description:
-      "Perfect for securing one set of assets with a single trusted contact. We hold your sealed data and physically cannot open it—only your legacy contact can, once the automated email is sent.",
+      "Legacy Protection for one Smart Vault and one Legacy Contact. On-chain certainty: heartbeat gas sponsored, countdown and claim rules enforced by your contract—not by opaque storage.",
     features: STANDARD_FEATURES,
     Icon: Lock,
     accent: "black",
@@ -104,7 +103,7 @@ const PLANS = [
     price: "$15.99",
     period: "per month",
     description:
-      "For multiple beneficiaries and crypto accounts. Add unlimited legacy contacts and assign different assets or instructions to each.",
+      "For multiple Legacy Contacts and Smart Vault strategies. Unlimited beneficiaries, per‑wallet rules, and decentralized inheritance that scales with your estate.",
     features: PRO_FEATURES,
     Icon: Sparkles,
     accent: "navy",
@@ -116,7 +115,7 @@ const PLANS = [
     price: "$29.99",
     period: "per month",
     description:
-      "For complex estates and high‑value portfolios. Advanced rules, audit trail, and concierge onboarding—built for families that need maximum control and clarity.",
+      "For complex estates and high‑value portfolios. Advanced on-chain rules, full audit trail, and concierge onboarding—maximum clarity for multi‑generation wealth.",
     features: ENTERPRISE_FEATURES,
     Icon: Crown,
     accent: "white",
@@ -131,17 +130,17 @@ export function Pricing() {
       className="scroll-mt-20 border-t border-white/[0.08] bg-tech-section px-4 py-28 sm:px-6 sm:py-32 lg:px-8"
       aria-labelledby="pricing-heading"
     >
-      <div className="relative mx-auto max-w-6xl">
-        {/* Section frame */}
+      <div className="mx-auto max-w-6xl">
+        {/* Section aura + frame to make pricing feel premium */}
         <div
           className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[min(1100px,90vw)] -translate-x-1/2 -translate-y-24 rounded-[48px] blur-[90px]"
           style={{
             background:
-              "radial-gradient(ellipse 70% 55% at 50% 20%, rgba(255,255,255,0.06), transparent 60%), radial-gradient(ellipse 70% 55% at 70% 60%, rgba(255,255,255,0.04), transparent 60%)",
+              "radial-gradient(ellipse 70% 55% at 50% 20%, rgba(34,211,238,0.18), transparent 60%), radial-gradient(ellipse 70% 55% at 70% 60%, rgba(99,102,241,0.14), transparent 60%)",
           }}
           aria-hidden
         />
-        <div className="relative rounded-[32px] border border-white/10 bg-black/50 px-5 py-14 shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_40px_120px_-55px_rgba(0,0,0,0.85)] backdrop-blur-sm sm:px-10 sm:py-16">
+        <div className="relative rounded-[32px] border border-white/10 bg-black/40 px-5 py-14 shadow-[0_0_0_1px_rgba(34,211,238,0.08),0_40px_120px_-55px_rgba(34,211,238,0.35)] backdrop-blur-md sm:px-10 sm:py-16">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 12 }}
@@ -151,12 +150,12 @@ export function Pricing() {
         >
           <h2
             id="pricing-heading"
-            className="section-heading text-4xl font-bold tracking-tighter text-white sm:text-5xl"
+            className="section-heading text-4xl font-semibold tracking-tight text-white sm:text-5xl"
           >
             Pricing
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base text-white/65 sm:text-lg">
-            Simple, transparent pricing. Choose the plan that fits how you manage your crypto legacy—one contact or many.
+            Simple, transparent pricing. Choose the plan that fits your Smart Vault—from one Legacy Contact to full family governance on-chain.
           </p>
         </motion.div>
 
@@ -284,7 +283,7 @@ export function Pricing() {
           transition={{ duration: 0.35, delay: 0.15 }}
         >
           <p className="mx-auto max-w-xl text-sm text-white/55 sm:text-base">
-            Install the app today and lock in your plan. No payment required upfront—billing starts only when you activate your vault.
+            Join the waitlist to lock in your plan. No payment required upfront—billing starts only when you activate your Smart Vault.
           </p>
           <ScrambleButton
             href="#waitlist"
@@ -292,7 +291,7 @@ export function Pricing() {
               e.preventDefault();
               document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth", block: "start" });
             }}
-            className="mt-6 inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2.5 text-sm font-semibold tracking-wide text-black outline-none transition-colors hover:bg-neutral-200 focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
+            className="mt-6 inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#1e3a5f] to-[#0f172a] px-5 py-2.5 text-sm font-medium tracking-wide text-white outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-[#22d3ee]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617]"
             aria-label="Join the waitlist"
             scrambleOnHover={false}
             icon={<Download className="h-4 w-4 shrink-0 text-white/90" aria-hidden />}

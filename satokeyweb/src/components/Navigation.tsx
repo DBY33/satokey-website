@@ -62,7 +62,7 @@ export function Navigation() {
                 e.preventDefault();
                 handleLaunchVault();
               }}
-              className="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2.5 text-sm font-semibold tracking-wide text-black outline-none transition-colors hover:bg-neutral-200 focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
+              className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#1e3a5f] to-[#0f172a] px-5 py-2.5 text-sm font-medium tracking-wide text-white outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-[#22d3ee]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617]"
               aria-label="Join the waitlist"
               as="a"
               scrambleOnHover={false}
@@ -75,7 +75,7 @@ export function Navigation() {
           {/* Dropdown menu button (all devices) */}
           <button
             type="button"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2.5 text-sm font-medium tracking-wide text-white/90 transition-colors hover:border-white/25 hover:bg-white/[0.07] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm font-medium tracking-wide text-white/90 transition-colors hover:border-white/15 hover:bg-white/[0.05] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22d3ee]/50"
             onClick={() => setMobileMenuOpen((open) => !open)}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"

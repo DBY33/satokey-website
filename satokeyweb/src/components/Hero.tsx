@@ -33,11 +33,10 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 overflow-hidden"
         aria-hidden
       >
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,255,255,0.06),transparent_55%)]" />
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#020617]/80 to-transparent" />
       </div>
 
-      <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">
+      <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
         {/* Copy */}
         <motion.div
           className="text-center lg:text-left"
@@ -48,34 +47,20 @@ export function Hero() {
         >
           <motion.h1
             id="hero-heading"
-            className="section-heading text-5xl font-bold tracking-tighter text-white sm:text-6xl lg:text-7xl lg:leading-[1.02]"
+            className="section-heading text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.1]"
             variants={item}
           >
-            <span className="block text-white">Your crypto legacy,</span>
-            <span className="mt-1 block text-white/90">secured forever.</span>
+            Your Crypto Legacy,{" "}
+            <span className="text-white">
+              Secured Forever.
+            </span>
           </motion.h1>
           <motion.p
-            className="mt-8 max-w-xl text-base leading-relaxed text-white/55 sm:text-lg mx-auto lg:mx-0"
+            className="mt-6 max-w-xl text-lg leading-relaxed text-white/75 sm:text-xl mx-auto lg:mx-0"
             variants={item}
           >
-            The fail-safe bridge between your digital assets and your loved
-            ones. Automatic, sealed, and unstoppable.
+            Your wealth is locked in a Smart Vault that only you control, with a built-in, on-chain will that executes automatically if you stop checking in.
           </motion.p>
-          <motion.div
-            className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 border-t border-white/10 pt-10 lg:justify-start"
-            variants={item}
-          >
-            {[
-              { k: "Sealed", v: "Zero-knowledge" },
-              { k: "Failsafe", v: "Controlled release" },
-              { k: "Family", v: "Legacy contacts" },
-            ].map(({ k, v }) => (
-              <div key={k} className="text-left">
-                <p className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">{k}</p>
-                <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.2em] text-white/40">{v}</p>
-              </div>
-            ))}
-          </motion.div>
         </motion.div>
 
         {/* Vault visual */}
@@ -93,7 +78,7 @@ export function Hero() {
       {/* Scroll hint */}
       <motion.a
         href="#how-it-works"
-        className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1.5 text-white/35 transition-colors hover:text-white/55"
+        className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1.5 text-white/40 transition-colors hover:text-white/60"
         aria-label="Scroll to how it works"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

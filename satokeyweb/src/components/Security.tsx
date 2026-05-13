@@ -4,31 +4,31 @@ import { ShieldCheck, EyeOff, KeyRound, Bell } from "lucide-react";
 const POINTS = [
   {
     icon: ShieldCheck,
-    label: "Sealed vault",
-    title: "We hold the sealed vault, not the keys",
+    label: "Smart Vault",
+    title: "On-chain certainty, not custodial guesswork",
     description:
-      "Satokey stores your encrypted data but cannot open it. The cryptographic keys stay with you and your legacy contact.",
+      "Your Smart Vault is a programmable account abstraction setup: rules, beneficiaries, and release conditions live on-chain where anyone can verify them—no hidden halves or opaque storage.",
   },
   {
     icon: EyeOff,
-    label: "Zero visibility",
-    title: "We never see your passkeys",
+    label: "You stay in control",
+    title: "Only your hardware can veto or change the plan",
     description:
-      "Our systems are designed so that your passkeys are never visible in plaintext to Satokey staff or infrastructure.",
+      "While you’re active, updates and vetoes require your Satokey device. We don’t replace your keys or co-sign asset moves you didn’t authorize.",
   },
   {
     icon: KeyRound,
-    label: "Controlled release",
-    title: "Access only after the failsafe",
+    label: "Decentralized inheritance",
+    title: "Legacy follows verifiable contract logic",
     description:
-      "Your designated contact only receives access after missed check‑ins and a defined failsafe period—never before.",
+      "After inactivity and the on-chain countdown, your Legacy Contact’s claim path is enforced by the Smart Vault—not by a manual email gate or a single company’s discretion.",
   },
   {
     icon: Bell,
     label: "Transparent alerts",
     title: "You’re notified every step of the way",
     description:
-      "Email, push, and SMS alerts keep you informed about check‑ins, upcoming failsafe dates, and when your vault is handed over.",
+      "Push, email, and SMS keep you ahead of heartbeat due dates, countdown windows, and claim milestones so there are no surprises for you or your family.",
   },
 ] as const;
 
@@ -51,25 +51,25 @@ export function Security() {
         >
           {/* Glow background */}
           <div className="absolute inset-0 -z-10 blur-3xl">
-            <div className="absolute inset-10 rounded-[32px] bg-gradient-to-br from-white/12 via-white/5 to-transparent opacity-80" />
+            <div className="absolute inset-10 rounded-[32px] bg-gradient-to-br from-[#22d3ee]/35 via-[#6366f1]/25 to-[#0f172a] opacity-70" />
           </div>
 
-          {/* Shield card */}
-          <div className="relative rounded-3xl border border-white/[0.1] bg-black/60 px-10 py-10 shadow-[0_25px_80px_rgba(0,0,0,0.95)] backdrop-blur-xl">
-            <div className="mx-auto flex h-28 w-24 items-center justify-center rounded-3xl bg-gradient-to-b from-neutral-800 to-black shadow-[0_20px_50px_rgba(0,0,0,1)]">
-              <div className="relative h-20 w-16 rounded-2xl bg-gradient-to-b from-neutral-200 via-neutral-400 to-neutral-700">
+          {/* Shield card that feels like a real app badge */}
+          <div className="relative rounded-3xl border border-white/[0.08] bg-black/40 px-10 py-10 shadow-[0_25px_80px_rgba(15,23,42,0.9)] backdrop-blur-xl">
+            <div className="mx-auto flex h-28 w-24 items-center justify-center rounded-3xl bg-gradient-to-b from-[#1e293b] to-[#020617] shadow-[0_20px_50px_rgba(15,23,42,1)]">
+              <div className="relative h-20 w-16 rounded-2xl bg-gradient-to-b from-[#22d3ee] via-[#6366f1] to-[#0ea5e9]">
                 <div className="absolute inset-[3px] rounded-2xl bg-black" />
-                <ShieldCheck className="absolute left-1/2 top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 text-neutral-300" />
-                <div className="absolute inset-x-2 bottom-3 h-1.5 rounded-full bg-gradient-to-r from-white/40 to-white/10 blur-sm" />
+                <ShieldCheck className="absolute left-1/2 top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 text-[#38bdf8]" />
+                <div className="absolute inset-x-2 bottom-3 h-1.5 rounded-full bg-gradient-to-r from-[#22d3ee]/70 to-[#0ea5e9]/50 blur-sm" />
               </div>
             </div>
 
             <div className="mt-6 text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/50">
-                SECURITY MODEL
+                SMART VAULT MODEL
               </p>
               <p className="mt-2 text-sm text-white/70">
-                Zero‑knowledge storage. Strong encryption. Controlled, auditable release.
+                Account abstraction. Auditable on-chain rules. Decentralized inheritance you can explain in one conversation.
               </p>
             </div>
           </div>
@@ -85,7 +85,7 @@ export function Security() {
         >
           <h2
             id="security-heading"
-            className="section-heading text-4xl font-bold tracking-tighter text-white sm:text-5xl"
+            className="section-heading text-3xl font-semibold tracking-tight text-white sm:text-4xl"
           >
             Security you can explain to your family
           </h2>
@@ -99,7 +99,7 @@ export function Security() {
                 key={title}
                 className="flex gap-4 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-4 sm:p-5"
               >
-                <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.06] text-white/80">
+                <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.06] text-[#22d3ee]">
                   <Icon className="h-5 w-5" strokeWidth={1.6} aria-hidden />
                 </div>
                 <div>

@@ -1,47 +1,35 @@
 import { motion } from "framer-motion";
-import { Vault, HeartPulse, BellRing, ShieldCheck, KeyRound, Shield } from "lucide-react";
+import { Vault, HeartPulse, Clock, KeyRound, ShieldCheck, Shield } from "lucide-react";
 
 const STEPS = [
   {
     icon: Vault,
-    title: "Store your passkeys",
+    title: "The Vault",
     description:
-      "Add your crypto passkeys and instructions to your Satokey vault. We hold the sealed box, not the keys.",
-  },
-  {
-    icon: Vault,
-    title: "Set priorities and percentages",
-    description:
-      "If you have multiple legacy contacts, you can allocate a percentage to each—so your wallet’s legacy is distributed exactly how you decide.",
+      "You create an on-chain Smart Vault secured by Satokey hardware. Your rules and beneficiaries live in the contract—only you can change them while you’re active.",
   },
   {
     icon: HeartPulse,
-    title: "Monthly heartbeat",
+    title: "The Heartbeat",
     description:
-      "Once a month we check in with you. A quick tap or click keeps everything as‑is and reassures your legacy contact.",
+      "Every six months you check in with a simple Satokey tap. It’s zero gas for you—Satokey’s paymaster covers the fees so staying current stays effortless.",
   },
   {
-    icon: BellRing,
-    title: "If something feels wrong",
+    icon: Clock,
+    title: "Automated Legacy",
     description:
-      "If you miss several check‑ins in a row, our system starts the failsafe process and prepares your legacy handover.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Legacy is released",
-    description:
-      "After the failsafe period, your designated contact receives what they need—securely and automatically.",
+      "If you go inactive past six months, a 30-day on-chain countdown begins for your Legacy Contact to claim. You can veto at any time with your hardware and reset the clock.",
   },
 ] as const;
 
-function PasskeyLockVisual() {
+function SmartVaultLockVisual() {
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-neutral-950/80 p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_40px_100px_-50px_rgba(0,0,0,0.9)] backdrop-blur-md">
+    <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/50 p-6 shadow-[0_0_0_1px_rgba(34,211,238,0.08),0_40px_120px_-60px_rgba(34,211,238,0.35)] backdrop-blur-md">
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 70% 55% at 50% 15%, rgba(255,255,255,0.06), transparent 60%), radial-gradient(ellipse 70% 55% at 80% 75%, rgba(255,255,255,0.03), transparent 60%)",
+            "radial-gradient(ellipse 70% 55% at 50% 15%, rgba(34,211,238,0.18), transparent 60%), radial-gradient(ellipse 70% 55% at 80% 75%, rgba(99,102,241,0.12), transparent 60%)",
         }}
         aria-hidden
       />
@@ -49,20 +37,20 @@ function PasskeyLockVisual() {
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
             <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/5 ring-1 ring-white/10">
-              <KeyRound className="h-5 w-5 text-white/80" aria-hidden />
+              <KeyRound className="h-5 w-5 text-[#22d3ee]" aria-hidden />
             </span>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Passkey vault</p>
-              <p className="text-sm font-semibold text-white/90">Locked & sealed</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Smart Vault</p>
+              <p className="text-sm font-semibold text-white/90">On-chain • AA</p>
             </div>
           </div>
           <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
-            Secure
+            Live
           </span>
         </div>
 
         <div className="mt-8 grid grid-cols-[1fr_auto_1fr] items-center gap-4">
-          {/* Passkey */}
+          {/* Vault intent */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: -18 }}
@@ -71,20 +59,20 @@ function PasskeyLockVisual() {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <motion.div
-              className="relative flex items-center gap-3 rounded-2xl border border-white/10 bg-[#0a0a0a]/70 px-4 py-3"
+              className="relative flex items-center gap-3 rounded-2xl border border-white/10 bg-[#020617]/70 px-4 py-3"
               animate={{ x: [0, 26, 26, 0] }}
               transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut", times: [0, 0.35, 0.65, 1] }}
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/8 ring-1 ring-white/12">
-                <KeyRound className="h-5 w-5 text-white/85" aria-hidden />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#22d3ee]/10 ring-1 ring-[#22d3ee]/20">
+                <Vault className="h-5 w-5 text-[#22d3ee]" aria-hidden />
               </div>
               <div className="min-w-0">
-                <p className="text-sm font-semibold text-white/90">Passkey</p>
-                <p className="text-xs text-white/55">Encrypted • sealed</p>
+                <p className="text-sm font-semibold text-white/90">Vault rules</p>
+                <p className="text-xs text-white/55">Signed • enforced on-chain</p>
               </div>
 
               <motion.div
-                className="pointer-events-none absolute -right-7 top-1/2 h-[2px] w-10 -translate-y-1/2 bg-gradient-to-r from-transparent via-white/35 to-transparent"
+                className="pointer-events-none absolute -right-7 top-1/2 h-[2px] w-10 -translate-y-1/2 bg-gradient-to-r from-[#22d3ee]/0 via-[#22d3ee]/60 to-[#22d3ee]/0"
                 animate={{ opacity: [0.2, 1, 0.2] }}
                 transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
                 aria-hidden
@@ -95,8 +83,8 @@ function PasskeyLockVisual() {
           {/* Lock core */}
           <div className="relative flex items-center justify-center">
             <motion.div
-              className="relative grid h-24 w-24 place-items-center rounded-3xl border border-white/10 bg-[#0a0a0a]/80 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]"
-              animate={{ boxShadow: ["inset 0 0 0 1px rgba(255,255,255,0.06)", "inset 0 0 0 1px rgba(255,255,255,0.14)"] }}
+              className="relative grid h-24 w-24 place-items-center rounded-3xl border border-white/10 bg-[#020617]/60 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]"
+              animate={{ boxShadow: ["inset 0 0 0 1px rgba(255,255,255,0.05)", "inset 0 0 0 1px rgba(34,211,238,0.18)"] }}
               transition={{ duration: 1.8, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
             >
               <Shield className="h-10 w-10 text-white/85" aria-hidden />
@@ -104,7 +92,7 @@ function PasskeyLockVisual() {
                 className="pointer-events-none absolute inset-0 rounded-3xl"
                 style={{
                   background:
-                    "radial-gradient(circle at 50% 35%, rgba(255,255,255,0.08), transparent 60%)",
+                    "radial-gradient(circle at 50% 35%, rgba(34,211,238,0.14), transparent 60%)",
                 }}
                 animate={{ opacity: [0.35, 0.9, 0.35] }}
                 transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
@@ -113,7 +101,7 @@ function PasskeyLockVisual() {
             </motion.div>
           </div>
 
-          {/* Sealed state */}
+          {/* Legacy path */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: 18 }}
@@ -122,7 +110,7 @@ function PasskeyLockVisual() {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <motion.div
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#0a0a0a]/70 px-4 py-3"
+              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#020617]/70 px-4 py-3"
               animate={{ opacity: [0.55, 1, 0.55] }}
               transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
             >
@@ -130,15 +118,15 @@ function PasskeyLockVisual() {
                 <ShieldCheck className="h-5 w-5 text-white/85" aria-hidden />
               </div>
               <div className="min-w-0">
-                <p className="text-sm font-semibold text-white/90">Stored</p>
-                <p className="text-xs text-white/55">Access controlled</p>
+                <p className="text-sm font-semibold text-white/90">Legacy path</p>
+                <p className="text-xs text-white/55">Countdown • claim window</p>
               </div>
             </motion.div>
           </motion.div>
         </div>
 
         <p className="mt-8 text-sm leading-relaxed text-white/60">
-          Your passkeys are encrypted and sealed away. Satokey can store the vault, but cannot open it.
+          Smart Vault logic runs on-chain: your heartbeat proves you’re here; inactivity triggers the inheritance flow your contract already defines—no guessing games, just verifiable rules.
         </p>
       </div>
     </div>
@@ -162,12 +150,12 @@ export function HowItWorks() {
         >
           <h2
             id="how-it-works-heading"
-            className="section-heading text-4xl font-bold tracking-tighter text-white sm:text-5xl"
+            className="section-heading text-3xl font-semibold tracking-tight text-white sm:text-4xl"
           >
             How it works
           </h2>
           <p className="section-subtitle mx-auto mt-4 max-w-xl">
-            A clear, predictable flow from you today to the people who matter most, when it really counts.
+            Three steps: on-chain Smart Vault, gasless heartbeat, then automated legacy your beneficiaries can rely on—with your veto always one tap away.
           </p>
         </motion.div>
 
@@ -194,7 +182,7 @@ export function HowItWorks() {
                 transition={{ duration: 0.35, ease: "easeOut" }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-white/[0.06] text-white/85 ring-1 ring-white/12">
+                  <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#22d3ee]/10 text-[#22d3ee] ring-1 ring-[#22d3ee]/25">
                     <Icon className="h-5 w-5" strokeWidth={1.6} aria-hidden />
                   </div>
                   <div className="min-w-0">
@@ -217,7 +205,7 @@ export function HowItWorks() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.45, ease: "easeOut" }}
           >
-            <PasskeyLockVisual />
+            <SmartVaultLockVisual />
           </motion.div>
         </div>
       </div>

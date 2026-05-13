@@ -24,8 +24,8 @@ export function ScanningBeam() {
           to bottom,
           transparent 0%,
           transparent ${Math.max(0, scrollProgress * 100 - 2)}%,
-          rgba(255, 255, 255, 0.02) ${scrollProgress * 100}%,
-          rgba(255, 255, 255, 0.06) ${scrollProgress * 100 + 0.3}%,
+          rgba(34, 211, 238, 0.02) ${scrollProgress * 100}%,
+          rgba(34, 211, 238, 0.06) ${scrollProgress * 100 + 0.3}%,
           transparent ${Math.min(100, scrollProgress * 100 + 3)}%,
           transparent 100%
         )`,
@@ -36,8 +36,8 @@ export function ScanningBeam() {
         style={{
           top: `${scrollProgress * 100}%`,
           boxShadow:
-            "0 0 20px rgba(255, 255, 255, 0.15), 0 0 40px rgba(255, 255, 255, 0.08)",
-          background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent)",
+            "0 0 20px rgba(34, 211, 238, 0.4), 0 0 40px rgba(34, 211, 238, 0.2)",
+          background: "linear-gradient(90deg, transparent, #22d3ee, transparent)",
         }}
       />
     </div>
